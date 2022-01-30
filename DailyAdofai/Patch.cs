@@ -27,7 +27,7 @@ namespace DailyAdofai {
 		}
 
 		private static IEnumerator GetLevels(scnCLS __instance) {
-			var www = UnityWebRequest.Get("https://daily.hyonsu.com/levels");
+			var www = UnityWebRequest.Get("https://daily.hyonsu.com/levels?version=0");
 			yield return www.SendWebRequest();
 
 			if (www.result is not UnityWebRequest.Result.ConnectionError and not UnityWebRequest.Result.ProtocolError) {
@@ -108,12 +108,19 @@ namespace DailyAdofai {
 			tiledaily.transform.localPosition = new Vector3(4f, 1f, 0f);
 			var func = tiledaily.GetComponent<ffxCallFunction>();
 			func.ue = new QuickEvent();
-			func.ue.RemoveAllListeners();
 			func.ue.AddListener(() => {
 				Data.dailyMode = true;
 				scnCLS.instance.WorkshopLevelsPortal();
 			});
+			
+			func = tilequit.GetComponent<ffxCallFunction>();
+			func.ue = new QuickEvent();
+			func.ue.AddListener(() => {
+				Process.Start("https://discord.gg/SWDpB5W678");
+			});
 
+			var quittext = GameObject.Find("QuitCanvas").transform.GetChild(0).GetComponent<Text>();
+			quittext.text = "Daily ADOFAI Discord";
 
 			var positions = new float[] {-4, -3, -2, -1, 1, 2, 3, 4};
 			foreach (var position in positions) {

@@ -1,0 +1,8 @@
+﻿{
+  "Id": "DailyAdofai",
+  "DisplayName": "Daily ADOFAI",
+  "Author": "HYONSU & Lupinus (PERIOT)",
+  "Version": "0.0.1",
+  "AssemblyName": "DailyAdofai.dll",
+  "EntryMethod": "DailyAdofai.Main.Load"
+}
