@@ -8,7 +8,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using ADOFAI;
 using ByteSheep.Events;
-using EditorHelper.Utils;
 using GDMiniJSON;
 using HarmonyLib;
 using Mono.WebBrowser;

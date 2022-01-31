@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 
-namespace EditorHelper.Utils {
+namespace DailyAdofai {
     /// <summary>
     /// Class for getting/setting/invoking using <see cref="System.Reflection"/>.
     /// </summary>
