@@ -2,7 +2,7 @@
   "Id": "DailyAdofai",
   "DisplayName": "Daily ADOFAI",
   "Author": "HYONSU & Lupinus (PERIOT)",
-  "Version": "1.1",
+  "Version": "1.2",
   "AssemblyName": "DailyAdofai.dll",
   "EntryMethod": "DailyAdofai.Main.Load"
 }

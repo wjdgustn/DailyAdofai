@@ -58,12 +58,19 @@ namespace DailyAdofai {
 		public static void Postfix(scnCLS __instance) {
 			Data.dailyMode = false;
 			tileparent = GameObject.Find("initialPath").transform;
+			var deletedFirst = false;
 			foreach (Transform transform in tileparent) {
 				if (transform.name != "tile") continue;
 				if (tileprefab == null) {
 					tileprefab = transform.GetComponent<scrFloor>();
 				} else {
-					Object.Destroy(transform.gameObject);
+					if (!deletedFirst) {
+						Object.Destroy(transform.gameObject);
+						deletedFirst = true;
+						continue;
+					}
+					var spriteRenderer = transform.GetComponent<SpriteRenderer>();
+					spriteRenderer.color = new Color(0, 0, 0, 0);
 				}
 			}
 
