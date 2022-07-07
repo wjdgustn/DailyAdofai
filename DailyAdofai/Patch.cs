@@ -171,7 +171,7 @@ namespace DailyAdofai {
 	[HarmonyPatch(typeof(scrCamera), "Update")]
 	internal static class CameraUpdatePatch {
 		public static void Prefix(scrCamera __instance) {
-			if (!__instance.isLevelEditor || !__instance.controller.paused || !__instance.followMode) {
+			if (!ADOBase.isLevelEditor || !ADOBase.controller.paused || !__instance.followMode) {
 				if (!GCS.d_freeroam && !Input.GetKey(KeyCode.Minus) && !Input.GetKey(KeyCode.Equals)) {
 					if (__instance.positionState == (PositionState) 100) {
 						__instance.topos.y = 0f;
